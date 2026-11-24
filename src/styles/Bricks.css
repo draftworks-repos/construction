@@ -1,0 +1,40 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.bricks-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bricks-info-card {
+  background-color: var(--bg-paper);
+  border: 1px solid #D6D2CB;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+.bricks-info-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.bricks-info-card p {
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .bricks-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

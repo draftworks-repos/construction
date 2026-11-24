@@ -1,0 +1,6 @@
+{
+  "name": "Yadav Construction & Builders",
+  "description": "Supplier of premium paver blocks and fly ash bricks in Dinara, Madhya Pradesh. Strong, durable, affordable building materials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

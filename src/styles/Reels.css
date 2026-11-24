@@ -1,0 +1,228 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.reels-section {
+  padding: 8rem 5%;
+  background-color: var(--bg-charcoal);
+  color: var(--color-warm-white);
+}
+
+.reels-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.reels-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.reels-header-left h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 800;
+  color: var(--color-warm-white);
+  margin-bottom: 0.75rem;
+}
+
+.reels-header-left p {
+  color: #B5B0A8;
+  font-size: 1.05rem;
+}
+
+.btn-instagram {
+  background-color: #E1306C;
+  color: #FFFFFF;
+  padding: 0.85rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-instagram:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.reels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.reel-card {
+  position: relative;
+  aspect-ratio: 9/16;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--bg-charcoal-dark);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.reel-media,
+.reel-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel-poster {
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+
+.reel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(30, 29, 27, 0.85) 0%, rgba(30, 29, 27, 0.4) 25%, transparent 60%); /* Bottom-to-top with 25% dark area */
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.reel-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(194, 94, 56, 0.9);
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: transform 0.2s ease;
+}
+
+.reel-card:hover .reel-play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.reel-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-warm-white);
+  margin-bottom: 0.25rem;
+}
+
+.reel-info p {
+  color: #B5B0A8;
+  font-size: 0.85rem;
+}
+
+/* Modal Reel Player */
+.reel-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 14, 13, 0.95);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.reel-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 9/16;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+.reel-modal-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.reel-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.reel-modal-nav:hover {
+  background: var(--color-terracotta);
+}
+
+.reel-modal-nav.prev { left: -60px; }
+.reel-modal-nav.next { right: -60px; }
+
+@media (max-width: 900px) {
+  .reels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .reels-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .reel-modal-nav {
+    display: none;
+  }
+}

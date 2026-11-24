@@ -1,0 +1,100 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.floating-chat-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.floating-chat-main-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--color-terracotta);
+  color: var(--color-warm-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(194, 94, 56, 0.4);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  animation: pulseRing 8s infinite ease-in-out;
+}
+
+.floating-chat-main-btn:hover {
+  background-color: var(--color-terracotta-hover);
+  transform: scale(1.05);
+}
+
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(194, 94, 56, 0.4); }
+  70% { box-shadow: 0 0 0 16px rgba(194, 94, 56, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(194, 94, 56, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-chat-main-btn {
+    animation: none !important;
+  }
+}
+
+.chat-options-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateY(15px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chat-options-popup.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.chat-option-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.chat-option-item:hover {
+  transform: translateX(-4px);
+}
+
+.chat-option-item.whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+}
+
+.chat-option-item.call {
+  background-color: var(--bg-charcoal);
+  color: var(--color-warm-white);
+}
+
+@media (max-width: 900px) {
+  .floating-chat-container {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}

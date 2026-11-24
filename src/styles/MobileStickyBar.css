@@ -1,0 +1,55 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-charcoal-dark);
+  padding: 0.75rem 1rem;
+  z-index: 999;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+  gap: 0.75rem;
+}
+
+.mobile-sticky-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.mobile-sticky-btn.call-btn {
+  background-color: var(--bg-paper);
+  color: var(--color-text);
+}
+
+.mobile-sticky-btn.whatsapp-btn {
+  background-color: #25D366;
+  color: #FFFFFF;
+}
+
+.mobile-sticky-btn:active {
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .mobile-sticky-bar {
+    display: flex;
+  }
+  body {
+    padding-bottom: 70px; /* prevent content overlap on mobile */
+  }
+}

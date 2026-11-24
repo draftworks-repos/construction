@@ -1,0 +1,69 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+.comparison-section {
+  padding: 7rem 5%;
+  background-color: var(--bg-concrete);
+}
+
+.comparison-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.comparison-header {
+  margin-bottom: 3rem;
+}
+
+.comparison-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-weight: 800;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.comparison-card {
+  background-color: var(--bg-paper);
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+.comparison-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.comparison-card p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.guide-closing {
+  padding: 6rem 5%;
+  background-color: var(--bg-paper);
+  text-align: center;
+}
+
+.guide-closing h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
